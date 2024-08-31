@@ -1,5 +1,7 @@
 import { randomUUID } from 'node:crypto';
 
+// used for studies
+
 export class DataBaseMemory {
     #videos = new Map()
 
