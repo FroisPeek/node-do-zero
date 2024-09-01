@@ -1,17 +1,17 @@
-POST http://localhost:3333/videos
+POST https://node-do-zero-mgtf.onrender.com/videos
 Content-Type: application/json
 
 {
-    "title": "Video sobre node",
+    "title": "Video para testar o render",
     "description": "Esse é o video fera",
     "duration": 180
 }
 
 ###
-GET  http://localhost:3333/videos
+GET  https://node-do-zero-mgtf.onrender.com/videos
 
 ###
-PUT http://localhost:3333/videos/a08e7a9f-ab98-4381-9dff-e0faab7b68db
+PUT https://node-do-zero-mgtf.onrender.com/videos/72644ce9-9286-44bb-9632-3601bff202b1
 Content-Type: application/json
 
 {
@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3333/videos/a08e7a9f-ab98-4381-9dff-e0faab7b68db
+DELETE https://node-do-zero-mgtf.onrender.com/videos/72644ce9-9286-44bb-9632-3601bff202b1
