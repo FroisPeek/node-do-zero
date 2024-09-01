@@ -5,8 +5,6 @@ const server = fastify();
 const database = new DataBasePostgres();
 
 server.get('/', () => {
-
-    console.log(database.list())
     return 'Hello World';
 })
 
@@ -30,26 +28,26 @@ server.post('/videos', async (request, response) => {
     return response.status(201).send();
 });
 
-server.put('/videos/:id', (request, response) => {
+server.put('/videos/:id', async (request, response) => {
     const videoId = request.params.id
     const {title, description, duration} = request.body;
 
-    database.update(videoId, {
+    await database.update(videoId, {
         title, description, duration
     })
 
     return response.status(204).send();
 })
 
-server.delete('/videos/:id', (request, response) => {
+server.delete('/videos/:id', async (request, response) => {
     const videoId = request.params.id;
 
-    database.delete(videoId);
+    await database.delete(videoId);
 
     return response.status(204).send();
 })
 
 server.listen({
-    port: 3333
+    port: process.env.PORT ?? 3333
 });
 
